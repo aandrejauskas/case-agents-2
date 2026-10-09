@@ -1,0 +1,288 @@
+{
+  "n_queries": 30,
+  "router_accuracy": 1.0,
+  "confusion_matrix": {
+    "FAST_PATH": {
+      "FAST_PATH": 10,
+      "AGENT": 0
+    },
+    "AGENT": {
+      "FAST_PATH": 0,
+      "AGENT": 20
+    }
+  },
+  "precision_at_k": 0.45,
+  "k": 2,
+  "smart_pipeline": {
+    "total_cost_usd": 0.20003499999999982,
+    "total_latency_ms": 1684.6607010811567
+  },
+  "baseline_always_llm": {
+    "total_cost_usd": 0.9000000000000006,
+    "total_latency_ms": 2584.1510996688157
+  },
+  "latency_breakdown": {
+    "router_total_ms": 48.25660027563572,
+    "router_average_ms": 1.6085533425211906,
+    "retriever_total_ms": 655.4663009010255,
+    "retriever_average_ms": 32.77331504505128,
+    "retriever_queries": 20,
+    "agent_llm_total_ms": 980.9377999044955,
+    "agent_llm_average_ms": 49.046889995224774,
+    "agent_llm_queries": 20
+  },
+  "cost_savings_pct": 77.77388888888892,
+  "latency_savings_pct": 34.80796454599491,
+  "rows": [
+    {
+      "query": "Qual o valor da minha fatura desse mês?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_valor_fatura_mes_atual",
+        "consultar_fatura"
+      ],
+      "expected_tool": "consultar_fatura"
+    },
+    {
+      "query": "Quero saber meu saldo",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_saldo",
+        "verificar_saldo_conta_corrente"
+      ],
+      "expected_tool": "consultar_saldo"
+    },
+    {
+      "query": "Bom dia, qual o horário de atendimento?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Preciso mudei de casa, como mudo o CEP?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "comprar_moeda_estrangeira",
+        "atualizar_email"
+      ],
+      "expected_tool": "alterar_endereco"
+    },
+    {
+      "query": "Quanto eu tenho disponível na conta agora?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_valor_disponivel_conta",
+        "informar_saldo_atual_conta"
+      ],
+      "expected_tool": "consultar_saldo"
+    },
+    {
+      "query": "Fiz uma compra que não reconheço, quero contestar",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "contestar_compra_desconhecida",
+        "registrar_compra_nao_reconhecida"
+      ],
+      "expected_tool": "estornar_transacao"
+    },
+    {
+      "query": "Cobraram algo errado no meu cartão, quero o dinheiro de volta",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "reclamar_cobranca_errada_cartao_dinheiro_volta",
+        "solicitar_devolucao_dinheiro_cobranca_errada"
+      ],
+      "expected_tool": "estornar_transacao"
+    },
+    {
+      "query": "Me envia a linha digitável da fatura",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "enviar_boleto_fatura_email",
+        "gerar_linha_digitavel_fatura"
+      ],
+      "expected_tool": "consultar_fatura"
+    },
+    {
+      "query": "Qual o limite que ainda tenho no cartão de crédito?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_limite_restante_fatura",
+        "informar_limite_disponivel_cartao_credito"
+      ],
+      "expected_tool": "consultar_limite_cartao"
+    },
+    {
+      "query": "Posso dividir o pagamento da fatura em parcelas?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "dividir_pagamento_fatura",
+        "consultar_condicoes_parcelamento_fatura"
+      ],
+      "expected_tool": "parcelar_fatura"
+    },
+    {
+      "query": "Quero parcelar minha fatura em 3 vezes",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "parcelar_fatura_numero_vezes_escolhido",
+        "dividir_fatura_em_vezes"
+      ],
+      "expected_tool": "parcelar_fatura"
+    },
+    {
+      "query": "Troquei de número, preciso atualizar o telefone cadastrado",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "atualizar_telefone_cadastrado_troca_numero",
+        "alterar_telefone"
+      ],
+      "expected_tool": "alterar_telefone"
+    },
+    {
+      "query": "Quero mudar o e-mail vinculado à minha conta",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_email_vinculado_conta",
+        "atualizar_email"
+      ],
+      "expected_tool": "atualizar_email"
+    },
+    {
+      "query": "Perdi meu cartão na rua, preciso bloquear agora",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "solicitar_bloqueio_preventivo_cartao",
+        "reportar_perda_cartao"
+      ],
+      "expected_tool": "bloquear_cartao"
+    },
+    {
+      "query": "Chegou meu cartão novo, como faço para desbloquear?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "desbloquear_cartao",
+        "ativar_cartao_novo_recebido"
+      ],
+      "expected_tool": "desbloquear_cartao"
+    },
+    {
+      "query": "Meu cartão parou de funcionar, quero uma segunda via",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "emitir_segunda_via_cartao_parou_funcionar",
+        "solicitar_segunda_via_cartao"
+      ],
+      "expected_tool": "solicitar_segunda_via_cartao"
+    },
+    {
+      "query": "O aplicativo está travando, quero abrir um chamado",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "abrir_chamado_travamento_app",
+        "abrir_chamado_suporte_app_travando"
+      ],
+      "expected_tool": "abrir_chamado_suporte"
+    },
+    {
+      "query": "Oi, boa tarde",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Qual a taxa de manutenção mensal da conta?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Vocês atendem no sábado?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Muito obrigado pela ajuda, até logo",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Como funciona o programa de cashback de vocês?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Qual o telefone do SAC?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Quais documentos preciso para abrir uma conta?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Bom dia! Qual o valor mínimo para abrir uma conta?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    },
+    {
+      "query": "Preciso saber o saldo disponível pra pix",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_saldo_disponivel_pix",
+        "consultar_saldo_poupanca"
+      ],
+      "expected_tool": "consultar_saldo"
+    },
+    {
+      "query": "Essa cobrança na fatura não fui eu, quero estornar",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "estornar_transacao",
+        "alterar_endereco"
+      ],
+      "expected_tool": "estornar_transacao"
+    },
+    {
+      "query": "Manda o pdf da minha fatura atual",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "consultar_fatura",
+        "enviar_pdf_fatura_atual"
+      ],
+      "expected_tool": "consultar_fatura"
+    },
+    {
+      "query": "Mudei de endereço, como atualizo minha entrega?",
+      "expected_route": "AGENT",
+      "predicted_route": "AGENT",
+      "retrieved_tools": [
+        "processar_mudanca_endereco_atualizar_entrega",
+        "alterar_endereco"
+      ],
+      "expected_tool": "alterar_endereco"
+    },
+    {
+      "query": "Vocês cobram taxa de manutenção de conta?",
+      "expected_route": "FAST_PATH",
+      "predicted_route": "FAST_PATH"
+    }
+  ]
+}
